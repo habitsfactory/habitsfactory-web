@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+/* Reveal page after CSS loads (prevents FOUC) */
+html {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+@theme {
+    --color-primary-50: #ffffff;
+    --color-primary-100: #ddd3ca;
+    --color-primary-200: #bba795;
+    --color-primary-300: #997b60;
+    --color-primary-400: #774f2b;
+    --color-primary-500: #774f2b;
+    --color-primary-600: #6e5035;
+    --color-primary-700: #64503e;
+    --color-primary-800: #5b5148;
+    --color-primary-900: #515151;
+}
