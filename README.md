@@ -4,6 +4,6 @@ The web home of Continuum. Showcasing a robust, data-driven habit tracker built 
 # Contributing
 TBD
 
-# Star History
+## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=continuum-app/continuum-web&type=date&legend=top-left)](https://www.star-history.com/#continuum-app/continuum-web&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=habitsfactory/habitsfactory-web&type=date&legend=top-left)](https://www.star-history.com/#habitsfactory/habitsfactory-web&type=date&legend=top-left)
