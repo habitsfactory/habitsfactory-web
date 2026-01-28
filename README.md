@@ -69,4 +69,4 @@ You are free to use, modify, and distribute this software under the terms of the
 
 ---
 
-**Habits Factory** — *Build habits with intent. Measure with rigor.*
+> 🌱 **HabitsFactory** — *Build habits. Measure progress. Master consistency.*
