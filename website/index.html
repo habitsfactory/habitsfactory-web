@@ -24,7 +24,7 @@
     <meta property="og:description"
         content="A power-user oriented habit-tracking engine built for precision, insight, and long-term behavioral optimization.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="./res/logo.png">
+    <meta property="og:image" content="./res/logo_edition.svg">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./res/favicon_small.png">
@@ -48,7 +48,7 @@
         <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
             <div class="flex flex-wrap items-center justify-between max-w-7xl px-4 mx-auto">
                 <a href="#" class="flex items-center">
-                    <img src="./res/logo.png" class="h-6 mr-3 sm:h-9" alt="Habits Factory Logo" />
+                    <img src="./res/logo_edition.svg" class="h-6 mr-3 sm:h-9" alt="Habits Factory Logo" />
                     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Habits
                         Factory</span>
                 </a>
@@ -139,7 +139,7 @@
                 </div>
             </div>
             <div class="hidden lg:mt-0 lg:col-span-5 lg:flex lg:items-center lg:justify-center">
-                <img src="./res/logo.png" alt="HabitsFactory Logo" class="max-w-xs">
+                <img src="./res/logo_edition.svg" alt="HabitsFactory Logo" class="max-w-xs">
             </div>
         </div>
     </section>
@@ -521,33 +521,66 @@
     <!-- Footer -->
     <footer class="bg-white dark:bg-gray-900">
         <div class="max-w-7xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
-            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
-            <div class="text-center">
-                <a href="#"
-                    class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
-                    <img src="./res/logo.png" class="h-8 mr-3" alt="Habits Factory Logo" />
-                    Habits Factory
-                </a>
-                <p class="max-w-md mx-auto mb-4 text-gray-500 dark:text-gray-400">
-                    Build habits. Measure progress. Master consistency.
-                </p>
-                <span class="block text-sm text-center text-gray-500 dark:text-gray-400">
-                    © 2026 Habits Factory. Open source under Apache 2.0 License.
-                </span>
-                <ul class="flex justify-center mt-5 space-x-5">
-                    <li>
-                        <a href="https://github.com/habitsfactory/habitsfactory-app" target="_blank"
-                            class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
-                            <svg class="w-5 h-5" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"
-                                aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
+            <div class="grid gap-8 md:grid-cols-3 mb-8">
+                <!-- Brand -->
+                <div>
+                    <a href="#" class="flex items-center mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
+                        <img src="./res/logo_edition.svg" class="h-8 mr-3" alt="Habits Factory Logo" />
+                        Habits Factory
+                    </a>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Build habits. Measure progress. Master consistency.
+                    </p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white">Quick Links</h3>
+                    <ul class="space-y-3 text-gray-500 dark:text-gray-400">
+                        <li><a href="#philosophy"
+                                class="hover:text-primary-600 dark:hover:text-primary-400">Philosophy</a></li>
+                        <li><a href="#features" class="hover:text-primary-600 dark:hover:text-primary-400">Features</a>
+                        </li>
+                        <li><a href="#roadmap" class="hover:text-primary-600 dark:hover:text-primary-400">Roadmap</a>
+                        </li>
+                        <li><a href="https://docs.habitsfactory.io" target="_blank"
+                                class="hover:text-primary-600 dark:hover:text-primary-400">Documentation</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div>
+                    <h3 class="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact</h3>
+                    <ul class="space-y-3 text-gray-500 dark:text-gray-400">
+                        <li>
+                            <a href="mailto:contact@habitsfactory.io"
+                                class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+                                <svg class="w-5 h-5 mr-2" width="20" height="20" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                                contact@habitsfactory.io
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/habitsfactory/habitsfactory-app" target="_blank"
+                                class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+                                <svg class="w-5 h-5 mr-2" width="20" height="20" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                GitHub
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
+            <span class="block text-sm text-center text-gray-500 dark:text-gray-400">
+                © 2026 Habits Factory. Open source under Apache 2.0 License.
+            </span>
         </div>
     </footer>
 </body>

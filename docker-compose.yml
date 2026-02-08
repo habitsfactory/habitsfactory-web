@@ -5,4 +5,24 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:80"
+      - "443:443"
     restart: unless-stopped
+    volumes:
+      - docs-content:/usr/share/nginx/docs:ro
+      - ./certs:/etc/nginx/certs:ro
+    depends_on:
+      docs-fetcher:
+        condition: service_completed_successfully
+
+  docs-fetcher:
+    image: alpine/git:latest
+    volumes:
+      - docs-content:/docs
+    command: >
+      sh -c "rm -rf /docs/* &&
+             git clone --depth 1 --branch main https://github.com/habitsfactory/habitsfactory-docs.git /tmp/repo &&
+             cp -r /tmp/repo/site/* /docs/"
+    restart: "no"
+
+volumes:
+  docs-content:
