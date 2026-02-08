@@ -10,6 +10,7 @@ services:
     volumes:
       - docs-content:/usr/share/nginx/docs:ro
       - ./certs:/etc/nginx/certs:ro
+      - certbot-webroot:/var/www/certbot:ro
     depends_on:
       docs-fetcher:
         condition: service_completed_successfully
@@ -26,3 +27,4 @@ services:
 
 volumes:
   docs-content:
+  certbot-webroot:
