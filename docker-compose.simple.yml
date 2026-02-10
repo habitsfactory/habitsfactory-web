@@ -1,0 +1,33 @@
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    volumes:
+      - ./nginx/simple.conf:/etc/nginx/nginx.conf:ro
+      - docs-content:/usr/share/nginx/docs:ro
+    depends_on:
+      web:
+        condition: service_started
+      docs-fetcher:
+        condition: service_completed_successfully
+
+  web:
+    image: ghcr.io/habitsfactory/habitsfactory-web:latest
+    restart: unless-stopped
+    volumes:
+      - ./nginx/web.conf:/etc/nginx/nginx.conf:ro
+
+  docs-fetcher:
+    image: alpine/git:latest
+    volumes:
+      - docs-content:/docs
+    command: >
+      sh -c "rm -rf /docs/* &&
+             git clone --depth 1 --branch main https://github.com/habitsfactory/habitsfactory-docs.git /tmp/repo &&
+             cp -r /tmp/repo/site/* /docs/"
+    restart: "no"
+
+volumes:
+  docs-content:
