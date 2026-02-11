@@ -1,46 +1,28 @@
 services:
-  nginx:
-    image: nginx:alpine
+  web:
+    image: ghcr.io/habitsfactory/habitsfactory-web:latest
     ports:
       - "80:80"
-      - "443:443"
+      - "81:81"
     restart: unless-stopped
     volumes:
-      - ./nginx/proxy.conf:/etc/nginx/nginx.conf:ro
       - docs-content:/usr/share/nginx/docs:ro
-      - letsencrypt:/etc/letsencrypt:ro
-      - certbot-webroot:/var/www/certbot:ro
     depends_on:
-      web:
-        condition: service_started
       docs-fetcher:
         condition: service_completed_successfully
 
-  certbot:
-    image: certbot/certbot
-    restart: unless-stopped
-    volumes:
-      - letsencrypt:/etc/letsencrypt
-      - certbot-webroot:/var/www/certbot
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-
-  web:
-    image: ghcr.io/habitsfactory/habitsfactory-web:latest
-    restart: unless-stopped
-    volumes:
-      - ./nginx/web.conf:/etc/nginx/nginx.conf:ro
-
   docs-fetcher:
     image: alpine/git:latest
+    entrypoint: /bin/sh
+    command:
+      - -c
+      - |
+        rm -rf /docs/* /tmp/repo &&
+        git clone --depth 1 --branch main https://github.com/habitsfactory/habitsfactory-docs.git /tmp/repo &&
+        cp -r /tmp/repo/site/* /docs/
     volumes:
       - docs-content:/docs
-    command: >
-      sh -c "rm -rf /docs/* &&
-             git clone --depth 1 --branch main https://github.com/habitsfactory/habitsfactory-docs.git /tmp/repo &&
-             cp -r /tmp/repo/site/* /docs/"
     restart: "no"
 
 volumes:
   docs-content:
-  letsencrypt:
-  certbot-webroot:

@@ -1,7 +1,7 @@
 # Stage 1: Build the website
 FROM node:22-alpine AS build
 
-WORKDIR /app
+WORKDIR /website
 COPY website/package.json website/package-lock.json ./
 RUN npm ci
 COPY website/ ./
@@ -14,8 +14,8 @@ FROM nginx:alpine
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Copy built website files
-COPY --from=build /app/dist /usr/share/nginx/html/
+COPY --from=build /website/dist /usr/share/nginx/html/
 
-EXPOSE 80 443
+EXPOSE 80 81
 
 CMD ["nginx", "-g", "daemon off;"]
