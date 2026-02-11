@@ -3,7 +3,6 @@ services:
     image: ghcr.io/habitsfactory/habitsfactory-web:latest
     ports:
       - "80:80"
-      - "81:81"
     restart: unless-stopped
     volumes:
       - docs-content:/usr/share/nginx/docs:ro

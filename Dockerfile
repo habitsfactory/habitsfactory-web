@@ -16,6 +16,6 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # Copy built website files
 COPY --from=build /website/dist /usr/share/nginx/html/
 
-EXPOSE 80 81
+EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
